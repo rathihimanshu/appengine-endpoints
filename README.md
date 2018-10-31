@@ -1,16 +1,13 @@
 
 
-This demonstrates how to use Google Cloud Endpoints Frameworks v2 on Google App Engine Standard Environment using Python.
-
-## Setup
-
-After Create a virtual environment.
+After Creating a virtual environment.
 
 Install the Endpoints Frameworks v2 library:
 
+    
+    
     $ pip install -t lib -r requirements.txt --ignore-installed
-
-## Deploying to Google App Engine
+Deploying API
 
 Generate an OpenAPI file by running: `python lib/endpoints/endpointscfg.py get_openapi_spec main.EchoApi --hostname [YOUR-PROJECT-ID].appspot.com`
 
@@ -36,10 +33,16 @@ LOCAL ENVIRONMENT TESTING :--
 DEPLOYING THE API BACKEND :--
 
 
-Open the `app.yaml` file and in the `env_variables` section, replace [YOUR-PROJECT-ID] in `[YOUR-PROJECT-ID].appspot.com` with your project ID. This is your Endpoints service name. Then replace `2016-08-01r0` with your uploaded service management configuration.
+Open the app.yaml file and in the env_varialbe section, replace [YOUR-PROJECT-ID] in [YOUR-PROJECT-ID].appspot.com` 
 
-Then, deploy the sample using `gcloud`:
+Then, deploy the sample --
 
-    $ gcloud app deploy
+do -- gcloud app deploy
 
 Once deployed, you can access the application at https://your-service.appspot.com
+
+curl curl \
+    --request POST \
+    --header "Content-Type: application/json" \
+    --data '{"message":"hello world"}' \
+    https://[YOUR_PROJECT_ID].appspot.com/_ah/api/echo/v1/echo
