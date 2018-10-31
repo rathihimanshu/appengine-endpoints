@@ -33,8 +33,7 @@ LOCAL ENVIRONMENT TESTING :--
 DEPLOYING THE API BACKEND :--
 
 
-Open the app.yaml file and in the env_varialbe section, replace [YOUR-PROJECT-ID] in [YOUR-PROJECT-ID].appspot.com` & service version as 2017-02-13r2
-
+Open the app.yaml file and in the env_varialbe section, replace [YOUR-PROJECT-ID] in [YOUR-PROJECT-ID].appspot.com
 Then, deploy the sample --
 
 do -- gcloud app deploy
